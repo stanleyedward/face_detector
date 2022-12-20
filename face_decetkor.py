@@ -4,11 +4,11 @@ import cv2
 cascade_path=pathlib.Path(cv2.__file__).parent.absolute() / "data"/"haarcascade_frontalface_default.xml"
 #print(cascade_path)
 clf = cv2.CascadeClassifier(str(cascade_path))
-camera = cv2.VideoCapture(0)
+# camera = cv2.VideoCapture(0)
 # camera = cv2.VideoCapture(r"C:\Users\stanl\Documents\py\dotpy\eeeeeeeeeeeeeeeee\hari_puther.png")
 # camera = cv2.VideoCapture(r"C:\Users\stanl\Documents\py\dotpy\eeeeeeeeeeeeeeeee\me_in_toilet.mp4")
 # camera = cv2.VideoCapture(r"C:\Users\stanl\Documents\py\dotpy\eeeeeeeeeeeeeeeee\fnf.mp4")
-# camera = cv2.VideoCapture(r"C:\Users\stanl\Documents\py\dotpy\eeeeeeeeeeeeeeeee\maxresdefault.jpg")
+camera = cv2.VideoCapture(r"C:\Users\stanl\Documents\py\dotpy\eeeeeeeeeeeeeeeee\maxresdefault.jpg")
 
 
 while True:
@@ -26,10 +26,10 @@ while True:
         cv2.rectangle(frame, (x,y), (x+width, y+height), (255,255,0),2)
 
     cv2.imshow("press q to exit",frame)
-    # if cv2.waitKey(0)== ord("q"):      #use this for image
-    #     break
-    if cv2.waitKey(1)== ord("q"):    #use this for video
+    if cv2.waitKey(0)== ord("q"):      #use this for image
         break
+    # if cv2.waitKey(1)== ord("q"):    #use this for video
+    #     break
 
 camera.release()
 cv2.destroyAllWindows()
